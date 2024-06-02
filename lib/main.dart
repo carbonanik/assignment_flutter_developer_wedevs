@@ -1,3 +1,4 @@
+import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
 import 'package:assignment_flutter_developer_wedevs/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: primaryColor,
+          primary: primaryColor,
+          background: backgroundColor,
+        ),
         useMaterial3: true,
       ),
       home: const LoginPage(),

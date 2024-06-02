@@ -12,12 +12,20 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/facebook_logo.png
+  AssetGenImage get facebookLogo =>
+      const AssetGenImage('assets/images/facebook_logo.png');
+
+  /// File path: assets/images/google_logo.png
+  AssetGenImage get googleLogo =>
+      const AssetGenImage('assets/images/google_logo.png');
+
   /// File path: assets/images/logo_color.png
   AssetGenImage get logoColor =>
       const AssetGenImage('assets/images/logo_color.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [logoColor];
+  List<AssetGenImage> get values => [facebookLogo, googleLogo, logoColor];
 }
 
 class Assets {
