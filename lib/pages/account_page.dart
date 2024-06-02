@@ -1,9 +1,8 @@
 import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
 import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:assignment_flutter_developer_wedevs/pages/painters/dotted_circle_painter.dart';
 import 'package:flutter/material.dart';
 
-import '../painters/dotted_circle_painter.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});

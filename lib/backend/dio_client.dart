@@ -40,14 +40,13 @@ class DioClient implements ApiClient {
         );
         break;
       case MethodType.post:
-        print(payload);
-        print(path);
         response = await _client.post(
           path,
           data: payload,
           queryParameters: queryParams,
           options: Options(
             headers: headers,
+            followRedirects: true,
           ),
         );
         break;

@@ -1,3 +1,5 @@
+import 'package:assignment_flutter_developer_wedevs/model/registration_response.dart';
+
 import 'dio_client.dart';
 import 'links.dart';
 import 'method_types.dart';
@@ -22,7 +24,7 @@ class PublicApi {
     );
   }
 
-  Future registration({
+  Future<RegistrationResponse> registration({
     required String username,
     required String email,
     required String password,
@@ -35,7 +37,7 @@ class PublicApi {
         "password": password,
       },
       method: MethodType.post,
-      parse: (json) => json,
+      parse: RegistrationResponse.fromJson,
     );
   }
 }
