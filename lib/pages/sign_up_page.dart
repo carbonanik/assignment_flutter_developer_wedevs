@@ -59,7 +59,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
           builder: (context) =>
               BasicSuccessDialog(title: next.message ?? 'Success'));
       if (mounted) {
-        context.push(const LoginPage());
+        context.pushReplacement(const LoginPage());
       }
     }
   }
@@ -149,7 +149,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            context.push(const LoginPage());
+          },
           child: const Row(
             children: [
               Text(
@@ -157,7 +159,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 style: TextStyle(color: iconColor, fontSize: 14),
               ),
               Text(
-                'Sign In',
+                'Login',
                 style: TextStyle(color: primaryColor, fontSize: 14),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'package:assignment_flutter_developer_wedevs/model/login_response.dart';
 import 'package:assignment_flutter_developer_wedevs/model/registration_response.dart';
 
 import 'dio_client.dart';
@@ -9,7 +10,7 @@ class PublicApi {
 
   PublicApi({required this.client});
 
-  Future login({
+  Future<LoginResponse> login({
     required String username,
     required String password,
   }) async {
@@ -20,7 +21,7 @@ class PublicApi {
         "password": password,
       },
       method: MethodType.post,
-      parse: (json) => json,
+      parse: LoginResponse.fromJson,
     );
   }
 
