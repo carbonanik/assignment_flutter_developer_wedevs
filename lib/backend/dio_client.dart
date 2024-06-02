@@ -8,7 +8,8 @@ class DioClient implements ApiClient {
   DioClient({required String baseUrl}) {
     _client = Dio()
           ..options.baseUrl = baseUrl
-          ..interceptors.add(LogInterceptor())
+          ..interceptors
+              .add(LogInterceptor(requestBody: true, responseBody: true))
         //
         ;
   }

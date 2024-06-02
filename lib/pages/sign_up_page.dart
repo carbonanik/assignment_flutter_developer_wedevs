@@ -2,7 +2,8 @@ import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
 import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
 import 'package:assignment_flutter_developer_wedevs/pages/components/app_button.dart';
 import 'package:assignment_flutter_developer_wedevs/pages/dialogs/basic_error_dialog.dart';
-import 'package:assignment_flutter_developer_wedevs/pages/home.dart';
+import 'package:assignment_flutter_developer_wedevs/pages/dialogs/basic_success_dialog.dart';
+import 'package:assignment_flutter_developer_wedevs/pages/login_page.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/navigation.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/validator.dart';
 import 'package:dio/dio.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/gen/assets.gen.dart';
+import '../model/registration_response.dart';
 import '../provider/registration_provider.dart';
 import 'components/app_input_field.dart';
 
@@ -24,9 +26,9 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
 
   final _nameController = TextEditingController(text: 'anik');
-  final _emailController = TextEditingController(text: 'anik');
-  final _passwordController = TextEditingController(text: 'anik');
-  final _confirmPasswordController = TextEditingController(text: 'anik');
+  final _emailController = TextEditingController(text: 'anik@gmail.com');
+  final _passwordController = TextEditingController(text: '123456');
+  final _confirmPasswordController = TextEditingController(text: '123456');
 
   @override
   void dispose() {
@@ -43,16 +45,22 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
         context: context,
         builder: (context) {
           return BasicErrorDialog(
-            title: next.response?.data?.toString() ?? 'Error',
+            title: next.response?.data?['message'] ?? 'Error',
           );
         },
       );
     }
   }
 
-  onSuccess(previous, next) {
+  void onSuccess(previous, RegistrationResponse? next) async {
     if (next != null) {
-      context.push(const Home());
+      await showDialog(
+          context: context,
+          builder: (context) =>
+              BasicSuccessDialog(title: next.message ?? 'Success'));
+      if (mounted) {
+        context.push(const LoginPage());
+      }
     }
   }
 
@@ -162,6 +170,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
   AppButton _buildSignUpButton() {
     return AppButton(
       title: ref.watch(registrationsLoadingProvider) ? 'Loading...' : "Sign Up",
+      enabled: !ref.watch(registrationsLoadingProvider),
       onPressed: () {
         if (_formKey.currentState!.validate()) {
           ref.read(registrationsProvider.notifier).register(

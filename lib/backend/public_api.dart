@@ -14,7 +14,7 @@ class PublicApi {
     required String password,
   }) async {
     return await client.request(
-      path: Links.login,
+      path: Links.loginUrl,
       payload: {
         "username": username,
         "password": password,
@@ -30,7 +30,7 @@ class PublicApi {
     required String password,
   }) async {
     return await client.request(
-      path: Links.registration,
+      path: Links.registrationUrl,
       payload: {
         "username": username,
         "email": email,
