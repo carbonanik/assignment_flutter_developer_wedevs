@@ -1,8 +1,8 @@
 import 'dart:convert';
 
+import 'package:assignment_flutter_developer_wedevs/backend/auth_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'auth_data.dart';
 
 // ignore: constant_identifier_names
 const AUTH_PERSIST_DATA = 'authPersistData';
