@@ -11,8 +11,8 @@ _$UserResponseImpl _$$UserResponseImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       username: json['username'] as String?,
       name: json['name'] as String?,
-      firstName: json['firstName'] as String?,
-      lastName: json['lastName'] as String?,
+      firstName: json['first_name'] as String?,
+      lastName: json['last_name'] as String?,
       email: json['email'] as String?,
       url: json['url'] as String?,
       description: json['description'] as String?,
@@ -22,12 +22,12 @@ _$UserResponseImpl _$$UserResponseImplFromJson(Map<String, dynamic> json) =>
       slug: json['slug'] as String?,
       roles:
           (json['roles'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      registeredDate: json['registeredDate'] == null
+      registeredDate: json['registered_date'] == null
           ? null
-          : DateTime.parse(json['registeredDate'] as String),
-      avatarUrls: json['avatarUrls'] == null
+          : DateTime.parse(json['registered_date'] as String),
+      avatarUrls: json['avatar_urls'] == null
           ? null
-          : AvatarUrls.fromJson(json['avatarUrls'] as Map<String, dynamic>),
+          : AvatarUrls.fromJson(json['avatar_urls'] as Map<String, dynamic>),
       meta: json['meta'] == null
           ? null
           : Meta.fromJson(json['meta'] as Map<String, dynamic>),
@@ -38,8 +38,8 @@ Map<String, dynamic> _$$UserResponseImplToJson(_$UserResponseImpl instance) =>
       'id': instance.id,
       'username': instance.username,
       'name': instance.name,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
+      'first_name': instance.firstName,
+      'last_name': instance.lastName,
       'email': instance.email,
       'url': instance.url,
       'description': instance.description,
@@ -48,30 +48,30 @@ Map<String, dynamic> _$$UserResponseImplToJson(_$UserResponseImpl instance) =>
       'nickname': instance.nickname,
       'slug': instance.slug,
       'roles': instance.roles,
-      'registeredDate': instance.registeredDate?.toIso8601String(),
-      'avatarUrls': instance.avatarUrls,
+      'registered_date': instance.registeredDate?.toIso8601String(),
+      'avatar_urls': instance.avatarUrls,
       'meta': instance.meta,
     };
 
 _$AvatarUrlsImpl _$$AvatarUrlsImplFromJson(Map<String, dynamic> json) =>
     _$AvatarUrlsImpl(
-      the24: json['the24'] as String?,
-      the48: json['the48'] as String?,
-      the96: json['the96'] as String?,
+      the24: json['24'] as String?,
+      the48: json['48'] as String?,
+      the96: json['96'] as String?,
     );
 
 Map<String, dynamic> _$$AvatarUrlsImplToJson(_$AvatarUrlsImpl instance) =>
     <String, dynamic>{
-      'the24': instance.the24,
-      'the48': instance.the48,
-      'the96': instance.the96,
+      '24': instance.the24,
+      '48': instance.the48,
+      '96': instance.the96,
     };
 
 _$MetaImpl _$$MetaImplFromJson(Map<String, dynamic> json) => _$MetaImpl(
-      persistedPreferences: json['persistedPreferences'] as List<dynamic>?,
+      persistedPreferences: json['persisted_preferences'] as List<dynamic>?,
     );
 
 Map<String, dynamic> _$$MetaImplToJson(_$MetaImpl instance) =>
     <String, dynamic>{
-      'persistedPreferences': instance.persistedPreferences,
+      'persisted_preferences': instance.persistedPreferences,
     };

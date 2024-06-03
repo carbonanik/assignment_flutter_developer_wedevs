@@ -1,13 +1,21 @@
+import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/app_svg_icon.dart';
 
 class AppBottomBar extends StatelessWidget {
-  const AppBottomBar({super.key});
+  final int? index;
+  final Function(int index) onTap;
+
+  const AppBottomBar({
+    super.key,
+    this.index,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return  BottomAppBar(
+    return BottomAppBar(
       surfaceTintColor: Colors.white,
       shadowColor: Colors.black.withOpacity(.3),
       elevation: 20,
@@ -19,21 +27,33 @@ class AppBottomBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-            onPressed: () {},
-            icon: const AppSvgIcon(SvgIcons.home),
+            onPressed: () => onTap(0),
+            icon: AppSvgIcon(
+              SvgIcons.home,
+              color: index == 0 ? primaryColor : null,
+            ),
           ),
           IconButton(
-            onPressed: () {},
-            icon: const AppSvgIcon(SvgIcons.window),
+            onPressed: () => onTap(1),
+            icon: AppSvgIcon(
+              SvgIcons.window,
+              color: index == 1 ? primaryColor : null,
+            ),
           ),
           const SizedBox(width: 30),
           IconButton(
-            onPressed: () {},
-            icon: const AppSvgIcon(SvgIcons.cart),
+            onPressed: () => onTap(2),
+            icon: AppSvgIcon(
+              SvgIcons.cart,
+              color: index == 2 ? primaryColor : null,
+            ),
           ),
           IconButton(
-            onPressed: () {},
-            icon: const AppSvgIcon(SvgIcons.person),
+            onPressed: () => onTap(3),
+            icon: AppSvgIcon(
+              SvgIcons.person,
+              color: index == 3 ? primaryColor : null,
+            ),
           ),
         ],
       ),

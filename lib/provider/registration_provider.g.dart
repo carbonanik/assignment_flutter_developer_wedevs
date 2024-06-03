@@ -55,7 +55,7 @@ final registrationsSuccessProvider =
 );
 
 typedef RegistrationsSuccessRef = AutoDisposeProviderRef<RegistrationResponse?>;
-String _$registrationsHash() => r'2f7a700e48209da70bf1a98bd524419e4cb6f346';
+String _$registrationsHash() => r'5817b950f5f968cd34ea0b54c1e7f0e5c42e05b8';
 
 /// See also [Registrations].
 @ProviderFor(Registrations)

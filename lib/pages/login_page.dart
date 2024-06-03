@@ -4,7 +4,6 @@ import 'package:assignment_flutter_developer_wedevs/pages/components/app_button.
 import 'package:assignment_flutter_developer_wedevs/pages/sign_up_page.dart';
 import 'package:assignment_flutter_developer_wedevs/provider/login_provider.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/navigation.dart';
-import 'package:assignment_flutter_developer_wedevs/utils/snacbar.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +25,7 @@ class LoginPage extends ConsumerStatefulWidget {
 class _LoginPageState extends ConsumerState<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
-  final _emailController = TextEditingController(text: 'anik@gmail.com');
+  final _emailController = TextEditingController(text: 'anik2@gmail.com');
   final _passwordController = TextEditingController(text: '123456');
 
   @override

@@ -7,8 +7,8 @@ import 'api_provider.dart';
 part 'user_provider.g.dart';
 
 @riverpod
-class UserData extends _$UserData {
-  void updateUser({
+class UserProfile extends _$UserProfile {
+  Future<bool> updateUser({
     required String firstName,
     required String lastName,
   }) async {
@@ -26,6 +26,7 @@ class UserData extends _$UserData {
           StackTrace.current,
         );
     ref.invalidateSelf();
+    return res?.hasValue ?? false;
   }
 
   @override
@@ -37,4 +38,5 @@ class UserData extends _$UserData {
 }
 
 @riverpod
-bool userLoading(UserLoadingRef ref) => ref.watch(userDataProvider).isLoading;
+bool userLoading(UserLoadingRef ref) =>
+    ref.watch(userProfileProvider).isLoading;

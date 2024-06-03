@@ -22,8 +22,6 @@ class Registrations extends _$Registrations {
           password: password,
         )
         .errorAsValue();
-    print('==================');
-    print(state.error.toString());
   }
 
   @override

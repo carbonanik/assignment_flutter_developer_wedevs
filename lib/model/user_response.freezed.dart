@@ -23,7 +23,9 @@ mixin _$UserResponse {
   int? get id => throw _privateConstructorUsedError;
   String? get username => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "first_name")
   String? get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: "last_name")
   String? get lastName => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
@@ -33,7 +35,9 @@ mixin _$UserResponse {
   String? get nickname => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
   List<String>? get roles => throw _privateConstructorUsedError;
+  @JsonKey(name: "registered_date")
   DateTime? get registeredDate => throw _privateConstructorUsedError;
+  @JsonKey(name: "avatar_urls")
   AvatarUrls? get avatarUrls => throw _privateConstructorUsedError;
   Meta? get meta => throw _privateConstructorUsedError;
 
@@ -53,8 +57,8 @@ abstract class $UserResponseCopyWith<$Res> {
       {int? id,
       String? username,
       String? name,
-      String? firstName,
-      String? lastName,
+      @JsonKey(name: "first_name") String? firstName,
+      @JsonKey(name: "last_name") String? lastName,
       String? email,
       String? url,
       String? description,
@@ -63,8 +67,8 @@ abstract class $UserResponseCopyWith<$Res> {
       String? nickname,
       String? slug,
       List<String>? roles,
-      DateTime? registeredDate,
-      AvatarUrls? avatarUrls,
+      @JsonKey(name: "registered_date") DateTime? registeredDate,
+      @JsonKey(name: "avatar_urls") AvatarUrls? avatarUrls,
       Meta? meta});
 
   $AvatarUrlsCopyWith<$Res>? get avatarUrls;
@@ -206,8 +210,8 @@ abstract class _$$UserResponseImplCopyWith<$Res>
       {int? id,
       String? username,
       String? name,
-      String? firstName,
-      String? lastName,
+      @JsonKey(name: "first_name") String? firstName,
+      @JsonKey(name: "last_name") String? lastName,
       String? email,
       String? url,
       String? description,
@@ -216,8 +220,8 @@ abstract class _$$UserResponseImplCopyWith<$Res>
       String? nickname,
       String? slug,
       List<String>? roles,
-      DateTime? registeredDate,
-      AvatarUrls? avatarUrls,
+      @JsonKey(name: "registered_date") DateTime? registeredDate,
+      @JsonKey(name: "avatar_urls") AvatarUrls? avatarUrls,
       Meta? meta});
 
   @override
@@ -330,8 +334,8 @@ class _$UserResponseImpl implements _UserResponse {
       {this.id,
       this.username,
       this.name,
-      this.firstName,
-      this.lastName,
+      @JsonKey(name: "first_name") this.firstName,
+      @JsonKey(name: "last_name") this.lastName,
       this.email,
       this.url,
       this.description,
@@ -340,8 +344,8 @@ class _$UserResponseImpl implements _UserResponse {
       this.nickname,
       this.slug,
       final List<String>? roles,
-      this.registeredDate,
-      this.avatarUrls,
+      @JsonKey(name: "registered_date") this.registeredDate,
+      @JsonKey(name: "avatar_urls") this.avatarUrls,
       this.meta})
       : _roles = roles;
 
@@ -355,8 +359,10 @@ class _$UserResponseImpl implements _UserResponse {
   @override
   final String? name;
   @override
+  @JsonKey(name: "first_name")
   final String? firstName;
   @override
+  @JsonKey(name: "last_name")
   final String? lastName;
   @override
   final String? email;
@@ -383,8 +389,10 @@ class _$UserResponseImpl implements _UserResponse {
   }
 
   @override
+  @JsonKey(name: "registered_date")
   final DateTime? registeredDate;
   @override
+  @JsonKey(name: "avatar_urls")
   final AvatarUrls? avatarUrls;
   @override
   final Meta? meta;
@@ -464,8 +472,8 @@ abstract class _UserResponse implements UserResponse {
       {final int? id,
       final String? username,
       final String? name,
-      final String? firstName,
-      final String? lastName,
+      @JsonKey(name: "first_name") final String? firstName,
+      @JsonKey(name: "last_name") final String? lastName,
       final String? email,
       final String? url,
       final String? description,
@@ -474,8 +482,8 @@ abstract class _UserResponse implements UserResponse {
       final String? nickname,
       final String? slug,
       final List<String>? roles,
-      final DateTime? registeredDate,
-      final AvatarUrls? avatarUrls,
+      @JsonKey(name: "registered_date") final DateTime? registeredDate,
+      @JsonKey(name: "avatar_urls") final AvatarUrls? avatarUrls,
       final Meta? meta}) = _$UserResponseImpl;
 
   factory _UserResponse.fromJson(Map<String, dynamic> json) =
@@ -488,8 +496,10 @@ abstract class _UserResponse implements UserResponse {
   @override
   String? get name;
   @override
+  @JsonKey(name: "first_name")
   String? get firstName;
   @override
+  @JsonKey(name: "last_name")
   String? get lastName;
   @override
   String? get email;
@@ -508,8 +518,10 @@ abstract class _UserResponse implements UserResponse {
   @override
   List<String>? get roles;
   @override
+  @JsonKey(name: "registered_date")
   DateTime? get registeredDate;
   @override
+  @JsonKey(name: "avatar_urls")
   AvatarUrls? get avatarUrls;
   @override
   Meta? get meta;
@@ -525,8 +537,11 @@ AvatarUrls _$AvatarUrlsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AvatarUrls {
+  @JsonKey(name: "24")
   String? get the24 => throw _privateConstructorUsedError;
+  @JsonKey(name: "48")
   String? get the48 => throw _privateConstructorUsedError;
+  @JsonKey(name: "96")
   String? get the96 => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -541,7 +556,10 @@ abstract class $AvatarUrlsCopyWith<$Res> {
           AvatarUrls value, $Res Function(AvatarUrls) then) =
       _$AvatarUrlsCopyWithImpl<$Res, AvatarUrls>;
   @useResult
-  $Res call({String? the24, String? the48, String? the96});
+  $Res call(
+      {@JsonKey(name: "24") String? the24,
+      @JsonKey(name: "48") String? the48,
+      @JsonKey(name: "96") String? the96});
 }
 
 /// @nodoc
@@ -586,7 +604,10 @@ abstract class _$$AvatarUrlsImplCopyWith<$Res>
       __$$AvatarUrlsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? the24, String? the48, String? the96});
+  $Res call(
+      {@JsonKey(name: "24") String? the24,
+      @JsonKey(name: "48") String? the48,
+      @JsonKey(name: "96") String? the96});
 }
 
 /// @nodoc
@@ -624,16 +645,22 @@ class __$$AvatarUrlsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AvatarUrlsImpl implements _AvatarUrls {
-  const _$AvatarUrlsImpl({this.the24, this.the48, this.the96});
+  const _$AvatarUrlsImpl(
+      {@JsonKey(name: "24") this.the24,
+      @JsonKey(name: "48") this.the48,
+      @JsonKey(name: "96") this.the96});
 
   factory _$AvatarUrlsImpl.fromJson(Map<String, dynamic> json) =>
       _$$AvatarUrlsImplFromJson(json);
 
   @override
+  @JsonKey(name: "24")
   final String? the24;
   @override
+  @JsonKey(name: "48")
   final String? the48;
   @override
+  @JsonKey(name: "96")
   final String? the96;
 
   @override
@@ -671,18 +698,21 @@ class _$AvatarUrlsImpl implements _AvatarUrls {
 
 abstract class _AvatarUrls implements AvatarUrls {
   const factory _AvatarUrls(
-      {final String? the24,
-      final String? the48,
-      final String? the96}) = _$AvatarUrlsImpl;
+      {@JsonKey(name: "24") final String? the24,
+      @JsonKey(name: "48") final String? the48,
+      @JsonKey(name: "96") final String? the96}) = _$AvatarUrlsImpl;
 
   factory _AvatarUrls.fromJson(Map<String, dynamic> json) =
       _$AvatarUrlsImpl.fromJson;
 
   @override
+  @JsonKey(name: "24")
   String? get the24;
   @override
+  @JsonKey(name: "48")
   String? get the48;
   @override
+  @JsonKey(name: "96")
   String? get the96;
   @override
   @JsonKey(ignore: true)
@@ -696,6 +726,7 @@ Meta _$MetaFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Meta {
+  @JsonKey(name: "persisted_preferences")
   List<dynamic>? get persistedPreferences => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -708,7 +739,9 @@ abstract class $MetaCopyWith<$Res> {
   factory $MetaCopyWith(Meta value, $Res Function(Meta) then) =
       _$MetaCopyWithImpl<$Res, Meta>;
   @useResult
-  $Res call({List<dynamic>? persistedPreferences});
+  $Res call(
+      {@JsonKey(name: "persisted_preferences")
+      List<dynamic>? persistedPreferences});
 }
 
 /// @nodoc
@@ -742,7 +775,9 @@ abstract class _$$MetaImplCopyWith<$Res> implements $MetaCopyWith<$Res> {
       __$$MetaImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<dynamic>? persistedPreferences});
+  $Res call(
+      {@JsonKey(name: "persisted_preferences")
+      List<dynamic>? persistedPreferences});
 }
 
 /// @nodoc
@@ -769,7 +804,9 @@ class __$$MetaImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MetaImpl implements _Meta {
-  const _$MetaImpl({final List<dynamic>? persistedPreferences})
+  const _$MetaImpl(
+      {@JsonKey(name: "persisted_preferences")
+      final List<dynamic>? persistedPreferences})
       : _persistedPreferences = persistedPreferences;
 
   factory _$MetaImpl.fromJson(Map<String, dynamic> json) =>
@@ -777,6 +814,7 @@ class _$MetaImpl implements _Meta {
 
   final List<dynamic>? _persistedPreferences;
   @override
+  @JsonKey(name: "persisted_preferences")
   List<dynamic>? get persistedPreferences {
     final value = _persistedPreferences;
     if (value == null) return null;
@@ -820,11 +858,14 @@ class _$MetaImpl implements _Meta {
 }
 
 abstract class _Meta implements Meta {
-  const factory _Meta({final List<dynamic>? persistedPreferences}) = _$MetaImpl;
+  const factory _Meta(
+      {@JsonKey(name: "persisted_preferences")
+      final List<dynamic>? persistedPreferences}) = _$MetaImpl;
 
   factory _Meta.fromJson(Map<String, dynamic> json) = _$MetaImpl.fromJson;
 
   @override
+  @JsonKey(name: "persisted_preferences")
   List<dynamic>? get persistedPreferences;
   @override
   @JsonKey(ignore: true)

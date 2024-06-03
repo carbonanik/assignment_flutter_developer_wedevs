@@ -24,8 +24,13 @@ class $AssetsImagesGen {
   AssetGenImage get logoColor =>
       const AssetGenImage('assets/images/logo_color.png');
 
+  /// File path: assets/images/profile_image_mock.png
+  AssetGenImage get profileImageMock =>
+      const AssetGenImage('assets/images/profile_image_mock.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [facebookLogo, googleLogo, logoColor];
+  List<AssetGenImage> get values =>
+      [facebookLogo, googleLogo, logoColor, profileImageMock];
 }
 
 class Assets {

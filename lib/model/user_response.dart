@@ -10,7 +10,9 @@ class UserResponse with _$UserResponse {
     int? id,
     String? username,
     String? name,
+    @JsonKey(name: "first_name")
     String? firstName,
+    @JsonKey(name: "last_name")
     String? lastName,
     String? email,
     String? url,
@@ -20,7 +22,9 @@ class UserResponse with _$UserResponse {
     String? nickname,
     String? slug,
     List<String>? roles,
+    @JsonKey(name: "registered_date")
     DateTime? registeredDate,
+    @JsonKey(name: "avatar_urls")
     AvatarUrls? avatarUrls,
     Meta? meta,
   }) = _UserResponse;
@@ -32,8 +36,11 @@ class UserResponse with _$UserResponse {
 @freezed
 class AvatarUrls with _$AvatarUrls {
   const factory AvatarUrls({
+    @JsonKey(name: "24")
     String? the24,
+    @JsonKey(name: "48")
     String? the48,
+    @JsonKey(name: "96")
     String? the96,
   }) = _AvatarUrls;
 
@@ -44,6 +51,7 @@ class AvatarUrls with _$AvatarUrls {
 @freezed
 class Meta with _$Meta {
   const factory Meta({
+    @JsonKey(name: "persisted_preferences")
     List<dynamic>? persistedPreferences,
   }) = _Meta;
 
