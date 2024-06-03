@@ -24,19 +24,54 @@ class $AssetsImagesGen {
   AssetGenImage get logoColor =>
       const AssetGenImage('assets/images/logo_color.png');
 
+  /// File path: assets/images/placeholder1.png
+  AssetGenImage get placeholder1 =>
+      const AssetGenImage('assets/images/placeholder1.png');
+
+  /// File path: assets/images/placeholder2.png
+  AssetGenImage get placeholder2 =>
+      const AssetGenImage('assets/images/placeholder2.png');
+
+  /// File path: assets/images/placeholder3.png
+  AssetGenImage get placeholder3 =>
+      const AssetGenImage('assets/images/placeholder3.png');
+
+  /// File path: assets/images/placeholder4.png
+  AssetGenImage get placeholder4 =>
+      const AssetGenImage('assets/images/placeholder4.png');
+
   /// File path: assets/images/profile_image_mock.png
   AssetGenImage get profileImageMock =>
       const AssetGenImage('assets/images/profile_image_mock.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [facebookLogo, googleLogo, logoColor, profileImageMock];
+  List<AssetGenImage> get values => [
+        facebookLogo,
+        googleLogo,
+        logoColor,
+        placeholder1,
+        placeholder2,
+        placeholder3,
+        placeholder4,
+        profileImageMock
+      ];
+}
+
+class $AssetsMockDataGen {
+  const $AssetsMockDataGen();
+
+  /// File path: assets/mock_data/products.json
+  String get products => 'assets/mock_data/products.json';
+
+  /// List of all assets
+  List<String> get values => [products];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsMockDataGen mockData = $AssetsMockDataGen();
 }
 
 class AssetGenImage {

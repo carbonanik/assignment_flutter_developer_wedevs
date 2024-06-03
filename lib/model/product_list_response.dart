@@ -6,8 +6,8 @@ part 'product_list_response.freezed.dart';
 part 'product_list_response.g.dart';
 
 @freezed
-class ProductListResponse with _$ProductListResponse {
-  const factory ProductListResponse({
+class Product with _$Product {
+  const factory Product({
     @JsonKey(name: "id")
     int? id,
     @JsonKey(name: "name")
@@ -146,9 +146,9 @@ class ProductListResponse with _$ProductListResponse {
     Store? store,
     @JsonKey(name: "_links")
     Links? links,
-  }) = _ProductListResponse;
+  }) = _Product;
 
-  factory ProductListResponse.fromJson(Map<String, dynamic> json) => _$ProductListResponseFromJson(json);
+  factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
 }
 
 @freezed

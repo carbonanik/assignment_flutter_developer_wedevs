@@ -6,9 +6,8 @@ part of 'product_list_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductListResponseImpl _$$ProductListResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ProductListResponseImpl(
+_$ProductImpl _$$ProductImplFromJson(Map<String, dynamic> json) =>
+    _$ProductImpl(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       slug: json['slug'] as String?,
@@ -110,8 +109,7 @@ _$ProductListResponseImpl _$$ProductListResponseImplFromJson(
           : Links.fromJson(json['_links'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ProductListResponseImplToJson(
-        _$ProductListResponseImpl instance) =>
+Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ProductListResponse _$ProductListResponseFromJson(Map<String, dynamic> json) {
-  return _ProductListResponse.fromJson(json);
+Product _$ProductFromJson(Map<String, dynamic> json) {
+  return _Product.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ProductListResponse {
+mixin _$Product {
   @JsonKey(name: "id")
   int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
@@ -161,15 +161,13 @@ mixin _$ProductListResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ProductListResponseCopyWith<ProductListResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductListResponseCopyWith<$Res> {
-  factory $ProductListResponseCopyWith(
-          ProductListResponse value, $Res Function(ProductListResponse) then) =
-      _$ProductListResponseCopyWithImpl<$Res, ProductListResponse>;
+abstract class $ProductCopyWith<$Res> {
+  factory $ProductCopyWith(Product value, $Res Function(Product) then) =
+      _$ProductCopyWithImpl<$Res, Product>;
   @useResult
   $Res call(
       {@JsonKey(name: "id") int? id,
@@ -248,9 +246,9 @@ abstract class $ProductListResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
-    implements $ProductListResponseCopyWith<$Res> {
-  _$ProductListResponseCopyWithImpl(this._value, this._then);
+class _$ProductCopyWithImpl<$Res, $Val extends Product>
+    implements $ProductCopyWith<$Res> {
+  _$ProductCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -648,11 +646,10 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
 }
 
 /// @nodoc
-abstract class _$$ProductListResponseImplCopyWith<$Res>
-    implements $ProductListResponseCopyWith<$Res> {
-  factory _$$ProductListResponseImplCopyWith(_$ProductListResponseImpl value,
-          $Res Function(_$ProductListResponseImpl) then) =
-      __$$ProductListResponseImplCopyWithImpl<$Res>;
+abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$ProductImplCopyWith(
+          _$ProductImpl value, $Res Function(_$ProductImpl) then) =
+      __$$ProductImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -735,11 +732,11 @@ abstract class _$$ProductListResponseImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ProductListResponseImplCopyWithImpl<$Res>
-    extends _$ProductListResponseCopyWithImpl<$Res, _$ProductListResponseImpl>
-    implements _$$ProductListResponseImplCopyWith<$Res> {
-  __$$ProductListResponseImplCopyWithImpl(_$ProductListResponseImpl _value,
-      $Res Function(_$ProductListResponseImpl) _then)
+class __$$ProductImplCopyWithImpl<$Res>
+    extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
+    implements _$$ProductImplCopyWith<$Res> {
+  __$$ProductImplCopyWithImpl(
+      _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -815,7 +812,7 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
     Object? store = freezed,
     Object? links = freezed,
   }) {
-    return _then(_$ProductListResponseImpl(
+    return _then(_$ProductImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1098,8 +1095,8 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ProductListResponseImpl implements _ProductListResponse {
-  const _$ProductListResponseImpl(
+class _$ProductImpl implements _Product {
+  const _$ProductImpl(
       {@JsonKey(name: "id") this.id,
       @JsonKey(name: "name") this.name,
       @JsonKey(name: "slug") this.slug,
@@ -1183,8 +1180,8 @@ class _$ProductListResponseImpl implements _ProductListResponse {
         _groupedProducts = groupedProducts,
         _metaData = metaData;
 
-  factory _$ProductListResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductListResponseImplFromJson(json);
+  factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -1493,14 +1490,14 @@ class _$ProductListResponseImpl implements _ProductListResponse {
 
   @override
   String toString() {
-    return 'ProductListResponse(id: $id, name: $name, slug: $slug, postAuthor: $postAuthor, permalink: $permalink, dateCreated: $dateCreated, dateCreatedGmt: $dateCreatedGmt, dateModified: $dateModified, dateModifiedGmt: $dateModifiedGmt, type: $type, status: $status, featured: $featured, catalogVisibility: $catalogVisibility, description: $description, shortDescription: $shortDescription, sku: $sku, price: $price, regularPrice: $regularPrice, salePrice: $salePrice, dateOnSaleFrom: $dateOnSaleFrom, dateOnSaleFromGmt: $dateOnSaleFromGmt, dateOnSaleTo: $dateOnSaleTo, dateOnSaleToGmt: $dateOnSaleToGmt, priceHtml: $priceHtml, onSale: $onSale, purchasable: $purchasable, totalSales: $totalSales, virtual: $virtual, downloadable: $downloadable, downloads: $downloads, downloadLimit: $downloadLimit, downloadExpiry: $downloadExpiry, externalUrl: $externalUrl, buttonText: $buttonText, taxStatus: $taxStatus, taxClass: $taxClass, manageStock: $manageStock, stockQuantity: $stockQuantity, lowStockAmount: $lowStockAmount, inStock: $inStock, backorders: $backorders, backordersAllowed: $backordersAllowed, backordered: $backordered, soldIndividually: $soldIndividually, weight: $weight, dimensions: $dimensions, shippingRequired: $shippingRequired, shippingTaxable: $shippingTaxable, shippingClass: $shippingClass, shippingClassId: $shippingClassId, reviewsAllowed: $reviewsAllowed, averageRating: $averageRating, ratingCount: $ratingCount, relatedIds: $relatedIds, upsellIds: $upsellIds, crossSellIds: $crossSellIds, parentId: $parentId, purchaseNote: $purchaseNote, categories: $categories, tags: $tags, images: $images, attributes: $attributes, defaultAttributes: $defaultAttributes, variations: $variations, groupedProducts: $groupedProducts, menuOrder: $menuOrder, metaData: $metaData, store: $store, links: $links)';
+    return 'Product(id: $id, name: $name, slug: $slug, postAuthor: $postAuthor, permalink: $permalink, dateCreated: $dateCreated, dateCreatedGmt: $dateCreatedGmt, dateModified: $dateModified, dateModifiedGmt: $dateModifiedGmt, type: $type, status: $status, featured: $featured, catalogVisibility: $catalogVisibility, description: $description, shortDescription: $shortDescription, sku: $sku, price: $price, regularPrice: $regularPrice, salePrice: $salePrice, dateOnSaleFrom: $dateOnSaleFrom, dateOnSaleFromGmt: $dateOnSaleFromGmt, dateOnSaleTo: $dateOnSaleTo, dateOnSaleToGmt: $dateOnSaleToGmt, priceHtml: $priceHtml, onSale: $onSale, purchasable: $purchasable, totalSales: $totalSales, virtual: $virtual, downloadable: $downloadable, downloads: $downloads, downloadLimit: $downloadLimit, downloadExpiry: $downloadExpiry, externalUrl: $externalUrl, buttonText: $buttonText, taxStatus: $taxStatus, taxClass: $taxClass, manageStock: $manageStock, stockQuantity: $stockQuantity, lowStockAmount: $lowStockAmount, inStock: $inStock, backorders: $backorders, backordersAllowed: $backordersAllowed, backordered: $backordered, soldIndividually: $soldIndividually, weight: $weight, dimensions: $dimensions, shippingRequired: $shippingRequired, shippingTaxable: $shippingTaxable, shippingClass: $shippingClass, shippingClassId: $shippingClassId, reviewsAllowed: $reviewsAllowed, averageRating: $averageRating, ratingCount: $ratingCount, relatedIds: $relatedIds, upsellIds: $upsellIds, crossSellIds: $crossSellIds, parentId: $parentId, purchaseNote: $purchaseNote, categories: $categories, tags: $tags, images: $images, attributes: $attributes, defaultAttributes: $defaultAttributes, variations: $variations, groupedProducts: $groupedProducts, menuOrder: $menuOrder, metaData: $metaData, store: $store, links: $links)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProductListResponseImpl &&
+            other is _$ProductImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
@@ -1692,20 +1689,19 @@ class _$ProductListResponseImpl implements _ProductListResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProductListResponseImplCopyWith<_$ProductListResponseImpl> get copyWith =>
-      __$$ProductListResponseImplCopyWithImpl<_$ProductListResponseImpl>(
-          this, _$identity);
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
+      __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProductListResponseImplToJson(
+    return _$$ProductImplToJson(
       this,
     );
   }
 }
 
-abstract class _ProductListResponse implements ProductListResponse {
-  const factory _ProductListResponse(
+abstract class _Product implements Product {
+  const factory _Product(
       {@JsonKey(name: "id") final int? id,
       @JsonKey(name: "name") final String? name,
       @JsonKey(name: "slug") final String? slug,
@@ -1775,10 +1771,9 @@ abstract class _ProductListResponse implements ProductListResponse {
       @JsonKey(name: "menu_order") final int? menuOrder,
       @JsonKey(name: "meta_data") final List<MetaDatum>? metaData,
       @JsonKey(name: "store") final Store? store,
-      @JsonKey(name: "_links") final Links? links}) = _$ProductListResponseImpl;
+      @JsonKey(name: "_links") final Links? links}) = _$ProductImpl;
 
-  factory _ProductListResponse.fromJson(Map<String, dynamic> json) =
-      _$ProductListResponseImpl.fromJson;
+  factory _Product.fromJson(Map<String, dynamic> json) = _$ProductImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -1989,7 +1984,7 @@ abstract class _ProductListResponse implements ProductListResponse {
   Links? get links;
   @override
   @JsonKey(ignore: true)
-  _$$ProductListResponseImplCopyWith<_$ProductListResponseImpl> get copyWith =>
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
