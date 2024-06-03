@@ -4,4 +4,5 @@ class Links {
 
   static String registrationUrl = '/wp-json/wp/v2/users/register';
   static String loginUrl = '/wp-json/jwt-auth/v1/token';
+  static String userMeUrl = '/wp-json/wp/v2/users/me';
 }
