@@ -6,7 +6,7 @@ import 'api_provider.dart';
 
 part 'user_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class UserProfile extends _$UserProfile {
   Future<bool> updateUser({
     required String firstName,

@@ -266,7 +266,7 @@ class _ProfilePageState extends State<ProfilePage>
               ],
             ),
           ),
-          if (expanded && child != null) child
+          if (child != null) child
         ],
       ),
     );

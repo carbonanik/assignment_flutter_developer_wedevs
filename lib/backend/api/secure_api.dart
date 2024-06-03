@@ -1,8 +1,8 @@
-import 'package:assignment_flutter_developer_wedevs/backend/links.dart';
+import 'package:assignment_flutter_developer_wedevs/backend/api/links.dart';
 
-import '../model/user_response.dart' show UserResponse;
-import 'dio_client.dart';
-import 'method_types.dart';
+import '../../core/dio_client/dio_client.dart';
+import '../../core/dio_client/method_types.dart';
+import '../../model/user_response.dart' show UserResponse;
 
 class SecureApi {
   final DioClient client;

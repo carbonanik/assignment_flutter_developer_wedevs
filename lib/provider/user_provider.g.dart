@@ -20,12 +20,12 @@ final userLoadingProvider = AutoDisposeProvider<bool>.internal(
 );
 
 typedef UserLoadingRef = AutoDisposeProviderRef<bool>;
-String _$userProfileHash() => r'84bd20c151e3bb25e131aea44d1573fa1c350bd5';
+String _$userProfileHash() => r'8e8cca506686b876c5c6e018952ae24f2d58cfc8';
 
 /// See also [UserProfile].
 @ProviderFor(UserProfile)
 final userProfileProvider =
-    AutoDisposeAsyncNotifierProvider<UserProfile, UserResponse?>.internal(
+    AsyncNotifierProvider<UserProfile, UserResponse?>.internal(
   UserProfile.new,
   name: r'userProfileProvider',
   debugGetCreateSourceHash:
@@ -34,6 +34,6 @@ final userProfileProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$UserProfile = AutoDisposeAsyncNotifier<UserResponse?>;
+typedef _$UserProfile = AsyncNotifier<UserResponse?>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

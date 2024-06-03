@@ -1,9 +1,9 @@
 import 'package:assignment_flutter_developer_wedevs/model/login_response.dart';
 import 'package:assignment_flutter_developer_wedevs/model/registration_response.dart';
 
-import 'dio_client.dart';
+import '../../core/dio_client/dio_client.dart';
 import 'links.dart';
-import 'method_types.dart';
+import '../../core/dio_client/method_types.dart';
 
 class PublicApi {
   final DioClient client;
