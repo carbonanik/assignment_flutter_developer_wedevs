@@ -19,7 +19,7 @@
 - 📄 **README.md**: Project documentation and information.
 
 ## Apk
-📦 **app-release.apk**   [(link)](https://drive.google.com/file/d/1spwCDHuEx2cyVSzRinb9Lww82tUD4K-R/view?usp=drive_web)
+📦 **app-release.apk**   [(link)](https://drive.google.com/file/d/1avHv733R1OVEBWeYR1bxH1jJtsN8C4QI/view?usp=sharing)
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ Make sure you have Flutter and Dart installed on your machine. If not, you can d
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/carbonanik/nagalay_flutter_skill_test.git
+    git clone https://github.com/carbonanik/assignment_flutter_developer_wedevs.git
     ```
 
 2. Navigate to the project directory:
