@@ -26,6 +26,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       floatingActionButton: const AppFloatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      extendBody: true,
+      extendBodyBehindAppBar: true,
       body: _pages[currentIndex],
       bottomNavigationBar: AppBottomBar(
         onTap: (index) {

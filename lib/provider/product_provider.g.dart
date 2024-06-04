@@ -20,22 +20,23 @@ final productListProvider = FutureProvider<List<Product>>.internal(
 );
 
 typedef ProductListRef = FutureProviderRef<List<Product>>;
-String _$productListWithFilterHash() =>
-    r'79dae9ee63db0364317e9a91b05d8c462edf448e';
+String _$productListWithFilterSearchHash() =>
+    r'c00a7470cb7c01010595d2de80c02f0377f4cff1';
 
-/// See also [productListWithFilter].
-@ProviderFor(productListWithFilter)
-final productListWithFilterProvider =
+/// See also [productListWithFilterSearch].
+@ProviderFor(productListWithFilterSearch)
+final productListWithFilterSearchProvider =
     AutoDisposeFutureProvider<List<Product>>.internal(
-  productListWithFilter,
-  name: r'productListWithFilterProvider',
+  productListWithFilterSearch,
+  name: r'productListWithFilterSearchProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$productListWithFilterHash,
+      : _$productListWithFilterSearchHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef ProductListWithFilterRef = AutoDisposeFutureProviderRef<List<Product>>;
+typedef ProductListWithFilterSearchRef
+    = AutoDisposeFutureProviderRef<List<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

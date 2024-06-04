@@ -16,28 +16,54 @@ final selectedFilterProvider = StateProvider<BottomModalOption?>((ref) {
   return null;
 });
 
+final showSearchFieldProvider = StateProvider<bool>((ref) {
+  return false;
+});
+
+final searchTextProvider = StateProvider<String>((ref) {
+  return '';
+});
+
 @riverpod
-Future<List<Product>> productListWithFilter(
-  ProductListWithFilterRef ref,
+Future<List<Product>> productListWithFilterSearch(
+  ProductListWithFilterSearchRef ref,
 ) async {
   final selectedFilter = ref.watch(selectedFilterProvider);
   final productList = ref.watch(productListProvider);
-  if (selectedFilter == null) {
-    return productList.value ?? [];
-  }
+  final searchText = ref.watch(searchTextProvider);
 
   //
+
+  final filtered = (productList.value != null && selectedFilter != null)
+      ? filterProduct(
+          productList.value ?? [],
+          selectedFilter,
+        )
+      : productList.value ?? [];
+
+  final searched = searchText.isEmpty
+      ? filtered
+      : filtered
+          .where((element) =>
+              element.name != null &&
+              element.name!.toLowerCase().contains(searchText.toLowerCase()))
+          .toList();
+  return searched;
+}
+
+List<Product> filterProduct(
+    List<Product> productList, BottomModalOption selectedFilter) {
   switch (selectedFilter) {
     case BottomModalOption.newest:
-      return productList.value ?? [];
+      return productList.toList();
 
     //
     case BottomModalOption.oldest:
-      return productList.value?.reversed.toList() ?? [];
+      return productList.reversed.toList();
 
     //
     case BottomModalOption.priceLowToHigh:
-      final sortedList = productList.value?.toList() ?? [];
+      final sortedList = productList.toList();
       sortedList.sort(
         (a, b) => (double.parse(a.price ?? '0'))
             .compareTo(double.parse(b.price ?? '0')),
@@ -46,7 +72,7 @@ Future<List<Product>> productListWithFilter(
 
     //
     case BottomModalOption.priceHighToLow:
-      final sortedList = productList.value?.toList() ?? [];
+      final sortedList = productList.toList();
       sortedList.sort(
         (a, b) => (double.parse(b.price ?? '0'))
             .compareTo(double.parse(a.price ?? '0')),
@@ -55,6 +81,6 @@ Future<List<Product>> productListWithFilter(
 
     //
     case BottomModalOption.bestSelling:
-      return productList.value ?? [];
+      return productList.toList();
   }
 }

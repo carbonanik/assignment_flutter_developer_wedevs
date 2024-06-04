@@ -61,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage>
                 const SizedBox(height: 40),
                 _buildNameEmail(),
                 const SizedBox(height: 40),
-                _buildSetttingsOptions(),
+                _buildSettingsOptions(),
                 const SizedBox(height: 100)
               ],
             ),
@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage>
     );
   }
 
-  Container _buildSetttingsOptions() {
+  Container _buildSettingsOptions() {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(20),

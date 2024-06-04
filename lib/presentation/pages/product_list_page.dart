@@ -23,22 +23,29 @@ class ProductListPage extends StatefulWidget {
 }
 
 class _ProductListPageState extends State<ProductListPage> {
+  final _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 20, width: double.infinity),
-              _buildTitleBar(),
-              const SizedBox(height: 20),
-              _buildFilterBar(),
-              _buildProductGrid(),
-            ],
-          ),
+      extendBody: true,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 40, width: double.infinity),
+            _buildTitleBar(),
+            const SizedBox(height: 20),
+            _buildFilterBar(),
+            _buildProductGrid(),
+          ],
         ),
       ),
     );
@@ -119,9 +126,9 @@ class _ProductListPageState extends State<ProductListPage> {
     return Expanded(
       child: Consumer(
         builder: (context, ref, child) {
-          final productList = ref.watch(productListWithFilterProvider);
+          final productList = ref.watch(productListWithFilterSearchProvider);
           return GridView.builder(
-            padding: const EdgeInsets.symmetric(vertical: 12),
+            padding: const EdgeInsets.only(top: 12, bottom: 70),
             itemCount: productList.value?.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -130,7 +137,10 @@ class _ProductListPageState extends State<ProductListPage> {
               childAspectRatio: .57,
             ),
             itemBuilder: (context, index) {
-              final product = productList.value![index];
+              final product = productList.value?[index];
+              if (product == null) {
+                return const SizedBox();
+              }
               return ProductCard(
                 product: product,
                 placeholder: placeholderImages[
@@ -143,26 +153,63 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  Row _buildTitleBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Opacity(
-          opacity: 0,
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-          ),
-        ),
-        const Text(
-          'Product List',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.search, size: 32),
-        ),
-      ],
+  Widget _buildTitleBar() {
+    return Consumer(
+      builder: (context, ref, child)  {
+        final showSearchField = ref.watch(showSearchFieldProvider);
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // for even space in row
+            Opacity(
+              opacity: 0,
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.search),
+              ),
+            ),
+            showSearchField
+                ? _buildSearchField()
+                : const Text(
+                    'Product List',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  ref.read(showSearchFieldProvider.notifier).state = !showSearchField;
+                });
+              },
+              icon: const Icon(Icons.search, size: 32),
+            ),
+          ],
+        );
+      }
+    );
+  }
+
+  Expanded _buildSearchField() {
+    return Expanded(
+      child: Consumer(
+        builder: (context, ref, child) {
+          return TextFormField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              hintText: 'Search',
+              suffixIcon: InkWell(
+                child: const Icon(Icons.clear),
+                onTap: () {
+                  ref.read(searchTextProvider.notifier).state = '';
+                  _searchController.clear();
+                },
+              ),
+            ),
+            onChanged: (value) {
+              ref.read(searchTextProvider.notifier).state = value;
+            },
+          );
+        },
+      ),
     );
   }
 }
