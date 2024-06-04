@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:assignment_flutter_developer_wedevs/backend/local/auth_data.dart';
+import 'package:assignment_flutter_developer_wedevs/data/local/auth_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: constant_identifier_names

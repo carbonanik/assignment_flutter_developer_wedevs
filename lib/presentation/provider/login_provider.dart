@@ -1,5 +1,5 @@
-import 'package:assignment_flutter_developer_wedevs/backend/local/auth_data.dart';
-import 'package:assignment_flutter_developer_wedevs/backend/local/auth_persist_data.dart';
+import 'package:assignment_flutter_developer_wedevs/data/local/auth_data.dart';
+import 'package:assignment_flutter_developer_wedevs/data/local/auth_persist_data.dart';
 import 'package:assignment_flutter_developer_wedevs/model/login_response.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/error_as_value.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

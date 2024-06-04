@@ -1,19 +1,19 @@
 import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
 import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
-import 'package:assignment_flutter_developer_wedevs/presentation/components/app_button.dart';
-import 'package:assignment_flutter_developer_wedevs/presentation/dialogs/basic_error_dialog.dart';
-import 'package:assignment_flutter_developer_wedevs/presentation/dialogs/basic_success_dialog.dart';
-import 'package:assignment_flutter_developer_wedevs/presentation/pages/login_page.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/navigation.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/validator.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/gen/assets.gen.dart';
-import '../../model/registration_response.dart';
+import '../../../core/gen/assets.gen.dart';
+import '../../../model/registration_response.dart';
 import '../../provider/registration_provider.dart';
+import '../components/app_button.dart';
 import '../components/app_input_field.dart';
+import '../dialogs/basic_error_dialog.dart';
+import '../dialogs/basic_success_dialog.dart';
+import 'login_page.dart';
 
 class SignUpPage extends ConsumerStatefulWidget {
   const SignUpPage({super.key});

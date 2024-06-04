@@ -1,9 +1,9 @@
-import 'package:assignment_flutter_developer_wedevs/backend/local/read_products.dart';
+import 'package:assignment_flutter_developer_wedevs/data/local/read_products.dart';
 import 'package:assignment_flutter_developer_wedevs/model/product_list_response.dart';
+import 'package:assignment_flutter_developer_wedevs/presentation/ui/components/bottom_modal.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../presentation/components/bottom_modal.dart';
 
 part 'product_provider.g.dart';
 

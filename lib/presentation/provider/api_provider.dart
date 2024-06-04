@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:assignment_flutter_developer_wedevs/core/dio_client/dio_client.dart';
-import 'package:assignment_flutter_developer_wedevs/backend/api/public_api.dart';
-import 'package:assignment_flutter_developer_wedevs/utils/error_as_value.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../backend/api/secure_api.dart';
-import '../backend/local/auth_persist_data.dart';
-import '../backend/api/links.dart';
+import '../../data/api/links.dart';
+import '../../data/api/public_api.dart';
+import '../../data/api/secure_api.dart';
+import '../../data/local/auth_persist_data.dart';
+
 
 part 'api_provider.g.dart';
 

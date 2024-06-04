@@ -1,12 +1,12 @@
 import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
-import 'package:assignment_flutter_developer_wedevs/presentation/components/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/colors.dart';
-import '../../core/gen/assets.gen.dart';
+import '../../../core/colors.dart';
+import '../../../core/gen/assets.gen.dart';
 import '../../provider/product_provider.dart';
 import '../components/bottom_modal.dart';
+import '../components/product_card.dart';
 
 final placeholderImages = [
   Assets.images.placeholder1.path,

@@ -1,4 +1,4 @@
-import 'package:assignment_flutter_developer_wedevs/backend/api/links.dart';
+import 'package:assignment_flutter_developer_wedevs/data/api/links.dart';
 
 import '../../core/dio_client/dio_client.dart';
 import '../../core/dio_client/method_types.dart';

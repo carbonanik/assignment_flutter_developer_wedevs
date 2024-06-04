@@ -1,7 +1,7 @@
+import 'package:assignment_flutter_developer_wedevs/model/user_response.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/error_as_value.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../model/user_response.dart';
 import 'api_provider.dart';
 
 part 'user_provider.g.dart';

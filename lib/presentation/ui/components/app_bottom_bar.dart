@@ -1,7 +1,7 @@
+import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
 import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/app_svg_icon.dart';
 
 class AppBottomBar extends StatelessWidget {
   final int? index;

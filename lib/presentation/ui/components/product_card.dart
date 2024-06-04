@@ -2,8 +2,8 @@ import 'package:assignment_flutter_developer_wedevs/model/product_list_response.
     show Product;
 import 'package:flutter/material.dart';
 
-import '../../core/colors.dart';
-import '../../core/gen/assets.gen.dart';
+import '../../../core/colors.dart';
+
 
 class ProductCard extends StatelessWidget {
   final Product product;

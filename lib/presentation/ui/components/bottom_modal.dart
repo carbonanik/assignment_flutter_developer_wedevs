@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/app_svg_icon.dart';
-import '../../core/colors.dart';
+import '../../../core/app_svg_icon.dart';
+import '../../../core/colors.dart';
 import '../../provider/product_provider.dart';
 
 enum BottomModalOption {
