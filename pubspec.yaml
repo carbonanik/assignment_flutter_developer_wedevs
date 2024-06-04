@@ -34,6 +34,7 @@ dev_dependencies:
   riverpod_lint: ^2.3.10
   freezed: ^2.5.2
   json_serializable: ^6.8.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter_gen:
   output: lib/core/gen/
@@ -46,6 +47,11 @@ flutter_native_splash:
   image: "assets/images/logo_color.png"
   android_12:
     image: "assets/images/splash_logo.png"
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_color.png"
 
 flutter:
 
