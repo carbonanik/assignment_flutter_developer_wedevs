@@ -5,7 +5,7 @@ extension FutureExtensions<R> on Future<R> {
   Future<AsyncValue<R>> errorAsValue() async {
     try {
       return AsyncValue.data(await this);
-    } on DioException catch (e) {
+    } catch (e) {
       return AsyncError(e, StackTrace.current);
     }
   }

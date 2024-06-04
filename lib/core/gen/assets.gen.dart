@@ -44,6 +44,10 @@ class $AssetsImagesGen {
   AssetGenImage get profileImageMock =>
       const AssetGenImage('assets/images/profile_image_mock.png');
 
+  /// File path: assets/images/splash_logo.png
+  AssetGenImage get splashLogo =>
+      const AssetGenImage('assets/images/splash_logo.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         facebookLogo,
@@ -53,7 +57,8 @@ class $AssetsImagesGen {
         placeholder2,
         placeholder3,
         placeholder4,
-        profileImageMock
+        profileImageMock,
+        splashLogo
       ];
 }
 

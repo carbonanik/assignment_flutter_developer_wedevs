@@ -20,7 +20,7 @@ final userLoadingProvider = AutoDisposeProvider<bool>.internal(
 );
 
 typedef UserLoadingRef = AutoDisposeProviderRef<bool>;
-String _$userProfileHash() => r'8e8cca506686b876c5c6e018952ae24f2d58cfc8';
+String _$userProfileHash() => r'23eea38c95af93b19c943766a470b73123f5881a';
 
 /// See also [UserProfile].
 @ProviderFor(UserProfile)

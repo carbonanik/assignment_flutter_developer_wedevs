@@ -32,8 +32,12 @@ class UserProfile extends _$UserProfile {
   @override
   Future<UserResponse?> build() async {
     final api = await ref.read(secureApiProvider.future);
-    final res = await api.userMe();
-    return res;
+    try{
+      final res = await api?.userMe();
+      return res;
+    }catch(e){
+      return null;
+    }
   }
 }
 

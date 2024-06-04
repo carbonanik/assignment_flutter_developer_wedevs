@@ -20,11 +20,11 @@ final publicApiProvider = AutoDisposeProvider<PublicApi>.internal(
 );
 
 typedef PublicApiRef = AutoDisposeProviderRef<PublicApi>;
-String _$secureApiHash() => r'c7ae636092c4764b9e67a17036e0b4052ff55a4a';
+String _$secureApiHash() => r'512685f0ced80f782b372e0e189819a81509f0ff';
 
 /// See also [secureApi].
 @ProviderFor(secureApi)
-final secureApiProvider = AutoDisposeFutureProvider<SecureApi>.internal(
+final secureApiProvider = AutoDisposeFutureProvider<SecureApi?>.internal(
   secureApi,
   name: r'secureApiProvider',
   debugGetCreateSourceHash:
@@ -33,6 +33,6 @@ final secureApiProvider = AutoDisposeFutureProvider<SecureApi>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef SecureApiRef = AutoDisposeFutureProviderRef<SecureApi>;
+typedef SecureApiRef = AutoDisposeFutureProviderRef<SecureApi?>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

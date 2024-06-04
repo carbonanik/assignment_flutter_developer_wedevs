@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:assignment_flutter_developer_wedevs/core/dio_client/dio_client.dart';
 import 'package:assignment_flutter_developer_wedevs/backend/api/public_api.dart';
+import 'package:assignment_flutter_developer_wedevs/utils/error_as_value.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../backend/api/secure_api.dart';
@@ -17,9 +18,9 @@ PublicApi publicApi(PublicApiRef ref) {
 }
 
 @riverpod
-Future<SecureApi> secureApi(SecureApiRef ref) async {
+Future<SecureApi?> secureApi(SecureApiRef ref) async {
   final client = DioClient(baseUrl: Links.baseUrl);
   final auth = await AuthPersistData().getAuthData();
-  client.setToken(auth.token);
+  client.setToken(auth?.token ?? '');
   return SecureApi(client: client);
 }
