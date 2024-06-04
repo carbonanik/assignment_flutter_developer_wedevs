@@ -160,11 +160,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             showPassword = !showPassword;
           });
         },
-        child: AppSvgIcon(
-          showPassword ? SvgIcons.eye : SvgIcons.eye_off,
+        child: Icon(
+          showPassword ? Icons.visibility_off : Icons.visibility,
+          color: Colors.grey,
         ),
       ),
-      obscureText: showPassword,
+      obscureText: !showPassword,
       controller: _passwordController,
       validator: Validator.required,
     );

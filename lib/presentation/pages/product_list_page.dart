@@ -40,7 +40,7 @@ class _ProductListPageState extends State<ProductListPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 40, width: double.infinity),
+            SizedBox(height: MediaQuery.of(context).padding.top + 10),
             _buildTitleBar(),
             const SizedBox(height: 20),
             _buildFilterBar(),
