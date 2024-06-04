@@ -154,13 +154,13 @@ class _ProductListPageState extends State<ProductListPage> {
   }
 
   Widget _buildTitleBar() {
-    return Consumer(
-      builder: (context, ref, child)  {
-        final showSearchField = ref.watch(showSearchFieldProvider);
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // for even space in row
+    return Consumer(builder: (context, ref, child) {
+      final showSearchField = ref.watch(showSearchFieldProvider);
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // for even space in row
+          if (!showSearchField)
             Opacity(
               opacity: 0,
               child: IconButton(
@@ -168,24 +168,24 @@ class _ProductListPageState extends State<ProductListPage> {
                 icon: const Icon(Icons.search),
               ),
             ),
-            showSearchField
-                ? _buildSearchField()
-                : const Text(
-                    'Product List',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-            IconButton(
-              onPressed: () {
-                setState(() {
-                  ref.read(showSearchFieldProvider.notifier).state = !showSearchField;
-                });
-              },
-              icon: const Icon(Icons.search, size: 32),
-            ),
-          ],
-        );
-      }
-    );
+          showSearchField
+              ? _buildSearchField()
+              : const Text(
+                  'Product List',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+          IconButton(
+            onPressed: () {
+              setState(() {
+                ref.read(showSearchFieldProvider.notifier).state =
+                    !showSearchField;
+              });
+            },
+            icon: const Icon(Icons.search, size: 32),
+          ),
+        ],
+      );
+    });
   }
 
   Expanded _buildSearchField() {
