@@ -1,16 +1,65 @@
-# assignment_flutter_developer_wedevs
+# WeDevs Flutter Skill Test
 
-A new Flutter project.
+## Folder architecture
+- 📁 **lib**: Contains the source code of the project.
+    - 📁 **core**: Core functionality of the app.
+    - 📁 **data**: Data layer.
+        - 📁 **api**: Dokan api.
+        - 📁 **local**: For data storing in local.
+    - 📁 **models**: Data models used in the application.
+    - 📁 **presentation**: Presentation layer.
+        - 📁 **provider**: State management (used riverpod).
+        - 📁 **ui**: User interface (UI).
+            - 📁 **pages**: Main pages.
+            - 📁 **components**: Reusable components.
+            - 📁 **dialogs**: Common dialogs used in the app.
+            - 📁 **painters**: Custom painters.
+    - 📁 **utils**: Utility functions.
+- 📁 **assets**: Assets used by the project.
+- 📄 **README.md**: Project documentation and information.
+
+## Apk
+📦 **app-release.apk**   [(link)](https://drive.google.com/file/d/1spwCDHuEx2cyVSzRinb9Lww82tUD4K-R/view?usp=drive_web)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Make sure you have Flutter and Dart installed on your machine. If not, you can download and install them from the official Flutter website: [Flutter Installation Guide](https://flutter.dev/docs/get-started/install)
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository to your local machine:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+    ```bash
+    git clone https://github.com/carbonanik/nagalay_flutter_skill_test.git
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Navigate to the project directory:
+
+    ```bash
+    cd your-flutter-app
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    flutter pub get
+    ```
+
+## Running the App
+
+1. Connect a device or start an emulator.
+
+2. Run the app:
+
+    ```bash
+    flutter run
+    ```
+
+This command will build and run the app on your connected device or emulator.
+
+## Additional Commands
+
+- To build a release version of the app:
+
+    ```bash
+    flutter build apk
+    ```
+  
