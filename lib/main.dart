@@ -2,9 +2,16 @@ import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
 import 'package:assignment_flutter_developer_wedevs/presentation/pages/home.dart';
 import 'package:assignment_flutter_developer_wedevs/presentation/pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  final binding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: binding);
+
+  runApp(const MyApp());
+  FlutterNativeSplash.remove();
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
