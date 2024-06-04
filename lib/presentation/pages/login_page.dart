@@ -1,18 +1,18 @@
 import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
 import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
-import 'package:assignment_flutter_developer_wedevs/pages/components/app_button.dart';
-import 'package:assignment_flutter_developer_wedevs/pages/sign_up_page.dart';
+import 'package:assignment_flutter_developer_wedevs/presentation/components/app_button.dart';
+import 'package:assignment_flutter_developer_wedevs/presentation/pages/sign_up_page.dart';
 import 'package:assignment_flutter_developer_wedevs/provider/login_provider.dart';
 import 'package:assignment_flutter_developer_wedevs/utils/navigation.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../core/gen/assets.gen.dart';
-import '../model/login_response.dart';
-import '../utils/validator.dart';
-import 'components/app_input_field.dart';
-import 'dialogs/basic_error_dialog.dart';
+import '../../core/gen/assets.gen.dart';
+import '../../model/login_response.dart';
+import '../../utils/validator.dart';
+import '../components/app_input_field.dart';
+import '../dialogs/basic_error_dialog.dart';
 import 'home.dart';
 
 class LoginPage extends ConsumerStatefulWidget {

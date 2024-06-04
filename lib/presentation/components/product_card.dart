@@ -1,4 +1,5 @@
-import 'package:assignment_flutter_developer_wedevs/model/product_list_response.dart' show Product;
+import 'package:assignment_flutter_developer_wedevs/model/product_list_response.dart'
+    show Product;
 import 'package:flutter/material.dart';
 
 import '../../core/colors.dart';
@@ -7,7 +8,12 @@ import '../../core/gen/assets.gen.dart';
 class ProductCard extends StatelessWidget {
   final Product product;
   final String placeholder;
-  const ProductCard({ required this.placeholder, required this.product, super.key});
+
+  const ProductCard({
+    required this.placeholder,
+    required this.product,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,16 +66,14 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
                 Row(
-                  crossAxisAlignment:
-                  CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       '\$${product.price}',
                       style: const TextStyle(
                         fontSize: 16,
                         color: Colors.grey,
-                        decoration:
-                        TextDecoration.lineThrough,
+                        decoration: TextDecoration.lineThrough,
                         decorationThickness: 2,
                         decorationColor: Colors.grey,
                       ),
@@ -78,19 +82,17 @@ class ProductCard extends StatelessWidget {
                     Text(
                       '\$${product.price}',
                       style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 4),
                 Row(
                   children: [
                     for (int i = 0; i < 5; i++)
                       Icon(
                         Icons.star,
-                        color:
-                        (product.ratingCount ?? 0) >= i
+                        color: (product.ratingCount ?? 0) >= i
                             ? Colors.amber
                             : Colors.grey,
                         size: 16,

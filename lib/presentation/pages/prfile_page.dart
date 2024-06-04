@@ -1,15 +1,15 @@
 import 'package:assignment_flutter_developer_wedevs/core/app_svg_icon.dart';
 import 'package:assignment_flutter_developer_wedevs/core/colors.dart';
-import 'package:assignment_flutter_developer_wedevs/pages/components/app_button.dart';
-import 'package:assignment_flutter_developer_wedevs/pages/dialogs/basic_success_dialog.dart';
-import 'package:assignment_flutter_developer_wedevs/pages/painters/dotted_circle_painter.dart';
+import 'package:assignment_flutter_developer_wedevs/presentation/components/app_button.dart';
+import 'package:assignment_flutter_developer_wedevs/presentation/dialogs/basic_success_dialog.dart';
+import 'package:assignment_flutter_developer_wedevs/presentation/painters/dotted_circle_painter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../core/gen/assets.gen.dart';
-import '../provider/user_provider.dart';
+import '../../core/gen/assets.gen.dart';
+import '../../provider/user_provider.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
