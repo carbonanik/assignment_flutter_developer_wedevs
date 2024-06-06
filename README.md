@@ -18,6 +18,16 @@
 - 📁 **assets**: Assets used by the project.
 - 📄 **README.md**: Project documentation and information.
 
+## Task Completed
+- ✅ Native Splash Screen
+- ✅ Sign Up
+- ✅ Login
+- ✅ Product List
+- ✅ Product Filter
+- ✅ Product Search
+- ✅ Profile View
+- ✅ Profile Update
+
 ## Apk
 📦 **app-release.apk**   [(link)](https://drive.google.com/file/d/1avHv733R1OVEBWeYR1bxH1jJtsN8C4QI/view?usp=sharing)
 
